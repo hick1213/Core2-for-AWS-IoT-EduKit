@@ -329,6 +329,7 @@ int va_dsp_playback_stopped()
 #ifdef CONFIG_PM_ENABLE
     va_dsp_low_power_start_timer(LOW_POWER_TIMER_SECS_SHORT);
 #endif
+    printf("****************************va_dsp_playback_stopped****************************\n");
     return 0;
 }
 

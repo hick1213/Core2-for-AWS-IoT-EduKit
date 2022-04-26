@@ -191,11 +191,17 @@ static void va_button_task(void *arg)
                         (*va_button_setup_mode_cb)(NULL);
                     }
                 } else if (!(va_button.b_mute)) {
-                    va_dsp_tap_to_talk_start();
+                    while(1){
+                        printf("****************************va_dsp_tap_to_talk_start****************************\n");
+                        va_dsp_tap_to_talk_start();
+                        vTaskDelay(pdMS_TO_TICKS(30000));
+                    }        
                 }
             }
-            active_btn_press = false;
-            act_btn_press_en = false;
+            // active_btn_press = false;
+            // act_btn_press_en = false;
+            
+            
         }
         vTaskDelay(pdMS_TO_TICKS(200));
     }
